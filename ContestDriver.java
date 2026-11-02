@@ -1,10 +1,10 @@
 /* ContestantDriver.java 
- - This ccode simulates the contests rounds using one ArrayList, records contestant's position, and measures movement time.
+ - This ccode simulates the contests rounds using one LinkedList, records contestant's position, and measures movement time.
  - Abraham Atencio Park ID: 1674404
- - Oct 25, 2026
+ - November 1, 2026
  */
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class ContestDriver {
@@ -21,8 +21,8 @@ public class ContestDriver {
    			numberOfRounds = Integer.parseInt(args[1]);
 		}
 
-        ArrayList<Contestant> line =
-                new ArrayList<>(numberOfContestants);
+        LinkedList<Contestant> line =
+            new LinkedList<>();
 
         /* A fixed seed makes the same configuration repeatable during testing.*/
         Random random = new Random(352);
@@ -81,7 +81,7 @@ public class ContestDriver {
 
 
     /* Processes each contestant once in the round's starting order*/
-    private static void playRound(ArrayList<Contestant> line,
+    private static void playRound(LinkedList<Contestant> line,
                                   Random random) {
         int contestantCount = line.size();
         int nextIndex = 0;
